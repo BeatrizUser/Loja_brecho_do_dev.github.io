@@ -36,7 +36,7 @@ async function ObterCarrinho(){
     return carrinho
 }
 function gerahtmldoproduto(produto){
-    return `<div class="col-lg-4 col-md-4 all">
+    return `<div class="col-lg-4 col-md-4 all gra">
     <div class="product-item">
     <a href="#"><img src="${produto.image}" alt=""></a>
     <div class="down-content">
