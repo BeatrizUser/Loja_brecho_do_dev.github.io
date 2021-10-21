@@ -173,7 +173,7 @@
       $(async function() {
     console.log( "ready!" );
     $(".produto").css("height", "auto")
-    produtos = await ObterCategoriaEspecifica("men's clothing")
+    produtos = await LimitarResultados(20)
     chamarprodutos(produtos)
 });
     </script>
