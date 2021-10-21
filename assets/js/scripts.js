@@ -24,8 +24,7 @@ async function ObterCategorias(){
     console.log(listadecategorias.data)
     return listadecategorias
 }
-async function ObterCategoriaEspecifica(){
-    categoria = "jewelery"
+async function ObterCategoriaEspecifica(categoria){
     ProdutosPorCategoria = await axios (`https://fakestoreapi.com/products/category/${categoria}`)
     console.log(ProdutosPorCategoria.data)
     return ProdutosPorCategoria
@@ -40,7 +39,8 @@ function gerahtmldoproduto(produto){
     <div class="product-item">
     <a href="#"><img src="${produto.image}" alt=""></a>
     <div class="down-content">
-    <a href="#"><h4>${produto.title}</h4></a>
+    <a href="#"><h4 style="max-width: 9em;">
+    ${produto.title}</h4></a>
     <h6>R$${produto.price}</h6>
     <p>${produto.description}</p>
     <ul class="stars">
@@ -56,7 +56,6 @@ function gerahtmldoproduto(produto){
     </div>`   
 }
 function chamarprodutos(produtos){
-    $(".produto").css("height", "auto")
     for (let produto of produtos.data){
           let body = $(".row .grid")
           $(".produto").css("height", "auto")
