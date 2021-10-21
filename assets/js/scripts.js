@@ -56,8 +56,10 @@ function gerahtmldoproduto(produto){
     </div>`   
 }
 function chamarprodutos(produtos){
+    $(".produto").css("height", "auto")
     for (let produto of produtos.data){
           let body = $(".row .grid")
+          $(".produto").css("height", "auto")
           let html = gerahtmldoproduto(produto)
               body.append(html)
     }
